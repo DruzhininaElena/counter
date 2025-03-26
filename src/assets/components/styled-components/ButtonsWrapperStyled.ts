@@ -7,4 +7,8 @@ export const ButtonsWrapperStyled = styled.div`
     border-radius: 5px;
     padding: 10px;
     gap: 30px;
+    
+    @media screen and (max-width: 575px) {
+        gap: 10px;
+    }
 `

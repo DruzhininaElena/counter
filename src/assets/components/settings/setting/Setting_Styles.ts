@@ -9,6 +9,7 @@ const SettingLabel = styled.label`
     justify-content: space-between;
     align-items: center;
     font-size: 20px;
+    gap: 10px;
 `
 const SettingValue = styled.input<Props>`
     outline: ${props => props.$error ? '2px solid red' : '2px solid aqua'};
@@ -16,6 +17,7 @@ const SettingValue = styled.input<Props>`
     background-color: ${props => props.$error ? '#ffe1eb' : 'white'};
     color: #3c3c3c;
     padding: 10px;
+    min-width: 50px;
 `
 
 export const S = {

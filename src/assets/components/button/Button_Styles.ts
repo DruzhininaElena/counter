@@ -21,6 +21,10 @@ const ButtonStyled = styled.button`
         background-color: #3c3c3c;
         color: aqua;
     }
+
+    @media screen and (max-width: 575px) {
+        padding: 10px;
+    }
 `
 
 export const S = {
