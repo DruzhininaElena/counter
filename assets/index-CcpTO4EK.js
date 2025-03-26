@@ -101,7 +101,7 @@ Error generating stack: `+a.message+`
     flex-direction: column;
     gap: 10px;
     flex-grow: 1;
-`,Hv=({maxCount:c,isSetting:r,count:o,incrementCount:s,resetCount:g,error:A})=>{const M=o>=c||r||A,N=!o||r||A;return _t.jsxs(w0,{children:[_t.jsx(Mv,{count:o,maxValueCount:c,isSetting:r,error:A}),_t.jsxs(K0,{children:[_t.jsx(us,{title:"inc",onClick:s,disabled:M}),_t.jsx(us,{title:"reset",onClick:g,disabled:N})]})]})},Nv=Ca.label`
+`,Hv=({maxCount:c,isSetting:r,count:o,incrementCount:s,resetCount:g,error:A,startCount:M})=>{const N=o>=c||r||A,_=o===M||r||A;return _t.jsxs(w0,{children:[_t.jsx(Mv,{count:o,maxValueCount:c,isSetting:r,error:A}),_t.jsxs(K0,{children:[_t.jsx(us,{title:"inc",onClick:s,disabled:N}),_t.jsx(us,{title:"reset",onClick:g,disabled:_})]})]})},Nv=Ca.label`
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -120,4 +120,4 @@ Error generating stack: `+a.message+`
     padding: 50px;
     width: 100vw;
     margin: 0 auto;
-`;function Yv(){const c=Number(localStorage.getItem("maxCount")),r=Number(localStorage.getItem("startCount")),[o,s]=vl.useState(c||5),[g,A]=vl.useState(r||0),[M,N]=vl.useState(!1),[_,b]=vl.useState(g),[U,x]=vl.useState(!1);localStorage.setItem("maxCount",o.toString()),localStorage.setItem("startCount",g.toString());const j=ut=>{s(ut),N(!1)},Y=ut=>{A(ut),b(ut),N(!1)},k=()=>{b(ut=>ut+1)},F=()=>{b(g)};return _t.jsxs(Bv,{children:[_t.jsx(xv,{maxCount:o,startCount:g,setIsSetting:N,changeMaxCount:j,changeStartCount:Y,isSetting:M,setError:x,error:U}),_t.jsx(Hv,{maxCount:o,isSetting:M,count:_,incrementCount:k,resetCount:F,error:U})]})}_y.createRoot(document.getElementById("root")).render(_t.jsx(vl.StrictMode,{children:_t.jsx(Yv,{})}));
+`;function Yv(){const c=Number(localStorage.getItem("maxCount")),r=Number(localStorage.getItem("startCount")),[o,s]=vl.useState(c||5),[g,A]=vl.useState(r||0),[M,N]=vl.useState(!1),[_,b]=vl.useState(g),[U,x]=vl.useState(!1);localStorage.setItem("maxCount",o.toString()),localStorage.setItem("startCount",g.toString());const j=ut=>{s(ut),N(!1)},Y=ut=>{A(ut),b(ut),N(!1)},k=()=>{b(ut=>ut+1)},F=()=>{b(g)};return _t.jsxs(Bv,{children:[_t.jsx(xv,{maxCount:o,startCount:g,setIsSetting:N,changeMaxCount:j,changeStartCount:Y,isSetting:M,setError:x,error:U}),_t.jsx(Hv,{maxCount:o,startCount:g,isSetting:M,count:_,incrementCount:k,resetCount:F,error:U})]})}_y.createRoot(document.getElementById("root")).render(_t.jsx(vl.StrictMode,{children:_t.jsx(Yv,{})}));
