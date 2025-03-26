@@ -47,6 +47,7 @@ function App() {
                       error={error}
             />
             <Counter maxCount={maxCount}
+                     startCount={startCount}
                      isSetting={isSetting}
                      count={count}
                      incrementCount={incrementCount}

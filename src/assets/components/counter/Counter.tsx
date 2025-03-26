@@ -10,15 +10,14 @@ type Props = {
     incrementCount: () => void
     resetCount: () => void
     error: boolean
+    startCount: number
 }
 
-export const Counter = ({ maxCount, isSetting, count, incrementCount, resetCount, error }: Props) => {
-
-
+export const Counter = ({ maxCount, isSetting, count, incrementCount, resetCount, error, startCount }: Props) => {
 
 
     const disabledIncButton = count >= maxCount || isSetting || error
-    const disabledResetButton = !count || isSetting || error
+    const disabledResetButton = count === startCount || isSetting || error
 
 
     return (
