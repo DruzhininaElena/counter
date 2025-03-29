@@ -21,6 +21,19 @@ export const Settings = ({ maxCount, startCount, setIsSetting, changeMaxCount, c
     const [errorInputMax, setErrorInputMax] = useState(false)
     const [errorInputStart, setErrorInputStart] = useState(false)
 
+    // useEffect(() => {
+    //     const maxValueAsString = localStorage.getItem('maxCount')
+    //     if (maxValueAsString) {
+    //         setNewMax(JSON.parse(maxValueAsString))
+    //     }
+    //
+    //     const startValueAsString = localStorage.getItem('startCount')
+    //     if (startValueAsString) {
+    //         setNewStart(JSON.parse(startValueAsString))
+    //     }
+    // }, [])
+
+
     let isCorrectInputValue: boolean
 
     const toggleError = () => {

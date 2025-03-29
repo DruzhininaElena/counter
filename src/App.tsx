@@ -6,26 +6,47 @@ import {ContainerStyled} from './assets/components/styled-components/ContainerSt
 
 function App() {
 
-    const max = Number(localStorage.getItem("maxCount"))
-    const start = Number(localStorage.getItem("startCount"))
+    const maxValueAsString = localStorage.getItem('maxCount')
+    let max
+    if (maxValueAsString) {
+        max = JSON.parse(maxValueAsString)
+    }
+
+    const startValueAsString = localStorage.getItem('startCount')
+    let start
+    if (startValueAsString) {
+        start = JSON.parse(startValueAsString)
+    }
 
     const [maxCount, setMaxCount] = useState(max || 5)
     const [startCount, setStartCount] = useState(start || 0)
-    const [isSetting, setIsSetting] =useState(false)
-    const [count, setCount] = useState(startCount)
+    const [isSetting, setIsSetting] = useState(false)
+    const [count, setCount] = useState<number>(startCount)
     const [error, setError] = useState(false)
 
-    localStorage.setItem("maxCount", maxCount.toString());
-    localStorage.setItem("startCount", startCount.toString());
+    // useEffect(() => {
+    //     const maxValueAsString = localStorage.getItem('maxCount')
+    //     if (maxValueAsString) {
+    //         setMaxCount(JSON.parse(maxValueAsString))
+    //     }
+    //
+    //     const startValueAsString = localStorage.getItem('startCount')
+    //     if (startValueAsString) {
+    //         setStartCount(JSON.parse(startValueAsString))
+    //     }
+    // }, [])
+
 
     const changeMaxCount = (newMaxCount: number) => {
         setMaxCount(newMaxCount)
         setIsSetting(false)
+        localStorage.setItem('maxCount', JSON.stringify(newMaxCount));
     }
     const changeStartCount = (newStartCount: number) => {
         setStartCount(newStartCount)
         setCount(newStartCount)
         setIsSetting(false)
+        localStorage.setItem('startCount', JSON.stringify(newStartCount));
     }
 
     const incrementCount = () => {
@@ -36,7 +57,7 @@ function App() {
     }
 
     return (
-        <ContainerStyled >
+        <ContainerStyled>
             <Settings maxCount={maxCount}
                       startCount={startCount}
                       setIsSetting={setIsSetting}
