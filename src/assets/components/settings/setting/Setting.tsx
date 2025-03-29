@@ -3,8 +3,8 @@ import {ChangeEvent} from 'react';
 
 type Props = {
     title: string
-    value: string
-    onChangeInput: (newValue: string) => void
+    value: number
+    onChangeInput: (newValue: number) => void
     errorInputMax?: boolean
     errorInputStart?: boolean
     error: boolean
@@ -12,10 +12,7 @@ type Props = {
 export const Setting = ({ title, value, onChangeInput, error }: Props) => {
 
     const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
-        const newValue = e.currentTarget.value;
-        if (newValue === '' || !isNaN(Number(newValue))) {
-            onChangeInput(newValue);
-        }
+        onChangeInput(Number(e.currentTarget.value))
     }
 
     return (

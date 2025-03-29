@@ -16,8 +16,8 @@ type Props = {
 };
 export const Settings = ({ maxCount, startCount, setIsSetting, changeMaxCount, changeStartCount, isSetting, setError, error }: Props) => {
 
-    const [newMax, setNewMax] = useState<string>(maxCount.toString())
-    const [newStart, setNewStart] = useState<string>(startCount.toString())
+    const [newMax, setNewMax] = useState(maxCount)
+    const [newStart, setNewStart] = useState(startCount)
     const [errorInputMax, setErrorInputMax] = useState(false)
     const [errorInputStart, setErrorInputStart] = useState(false)
 
@@ -48,30 +48,30 @@ export const Settings = ({ maxCount, startCount, setIsSetting, changeMaxCount, c
         }
     }
 
-    const changeNewMax = (newMaxValue: string) => {
+    const changeNewMax = (newMaxValue: number) => {
         setNewMax(newMaxValue)
 
-        isCorrectInputValue = Number(newMaxValue) > Number(newStart) && Number(newStart) >= 0
+        isCorrectInputValue = newMaxValue > newStart && newStart >= 0
 
         toggleError()
 
-        if (Number(newMaxValue) <= Number(newStart)) {
+        if (newMaxValue <= newStart) {
             setErrorInputStart(true)
             setErrorInputMax(true)
         }
     }
-    const changeNewStart = (newStartValue: string) => {
+    const changeNewStart = (newStartValue: number) => {
         setNewStart(newStartValue)
 
-        isCorrectInputValue = Number(newMax) > Number(newStartValue) && Number(newStartValue) >= 0
+        isCorrectInputValue = newMax > newStartValue && newStartValue >= 0
 
         toggleError()
 
-        if(Number(newStartValue) < 0) {
+        if(newStartValue < 0) {
             setErrorInputStart(true)
         }
 
-        if (Number(newMax) <= Number(newStartValue)) {
+        if (newMax <= newStartValue) {
             setErrorInputStart(true)
             setErrorInputMax(true)
         }
@@ -79,8 +79,8 @@ export const Settings = ({ maxCount, startCount, setIsSetting, changeMaxCount, c
 
     const changeInputValues = () => {
 
-        changeMaxCount(Number(newMax))
-        changeStartCount(Number(newStart))
+        changeMaxCount(newMax)
+        changeStartCount(newStart)
     }
 
     const disabledSetButton = !isSetting || error

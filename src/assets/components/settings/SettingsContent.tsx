@@ -2,10 +2,10 @@ import {Setting} from './setting/Setting.tsx';
 import {ContentWrapperStyled} from '../styled-components/ContentWrapperStyled.ts';
 
 type Props = {
-    changeNewMax: (newMaxValue: string) => void
-    changeNewStart: (newStartValue: string) => void
-    newStart: string
-    newMax: string
+    changeNewMax: (newMaxValue: number) => void
+    changeNewStart: (newStartValue: number) => void
+    newStart: number
+    newMax: number
     errorInputMax: boolean
     errorInputStart: boolean
 };
