@@ -8,13 +8,15 @@
     "build": "tsc -b && vite build --base=./",
     "lint": "eslint .",
     "preview": "vite preview",
-    "predeploy" : "pnpm run build",
+    "predeploy": "pnpm run build",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^2.6.1",
     "gh-pages": "^6.3.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-redux": "^9.2.0",
     "styled-components": "^6.1.16"
   },
   "devDependencies": {
