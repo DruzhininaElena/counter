@@ -1,3 +1,5 @@
+import {RootState} from '../../app/store.ts';
+
 export const loadState = () => {
     try {
         const serializedState = localStorage.getItem('state');
@@ -11,7 +13,7 @@ export const loadState = () => {
     }
 };
 
-export const saveState = (state: string) => {
+export const saveState = (state: RootState) => {
     try {
         const serializedState = JSON.stringify(state);
         localStorage.setItem('state', serializedState);

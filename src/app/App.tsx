@@ -4,13 +4,6 @@ import {ContainerStyled} from '../components/styled-components/ContainerStyled.t
 import {Settings} from '../components/settings/Settings.tsx';
 import {Counter} from '../components/counter/Counter.tsx';
 
-export type Counter = {
-    count: number
-    maxCount: number
-    startCount: number
-    isSetting: boolean
-}
-
 function App() {
 
     const [error, setError] = useState<boolean>(false)

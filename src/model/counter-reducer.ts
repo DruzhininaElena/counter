@@ -1,7 +1,6 @@
 import {createAction, createReducer} from '@reduxjs/toolkit';
-import {Counter} from '../app/App.tsx';
 
-const initialState: Counter = {
+const initialState = {
     count: 0,
     maxCount: 5,
     startCount: 0,
